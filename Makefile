@@ -5,7 +5,7 @@ reveal.js/.git: # To download the reveal.js dependency
 
 out/slides-revealjs.html: reveal.js/.git slides.txt
 	@mkdir -p $(@D)
-	pandoc slides.txt -t revealjs --standalone --self-contained --output out/slides-revealjs.html
+	pandoc slides.txt -t revealjs --standalone --self-contained --slide-level=2 --output out/slides-revealjs.html
 
 out/slides-beamer.pdf: slides.txt
 	@mkdir -p $(@D)
