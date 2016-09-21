@@ -1,6 +1,4 @@
 % Was bisher geschah...
-% Josef Kemetmüller
-% September 2016
 
 # In the morning
 
@@ -10,6 +8,10 @@
 - Get out of bed
 
 ## Breakfast
+
+```
+This is code
+```
 
 - Eat eggs
 - Drink coffee
