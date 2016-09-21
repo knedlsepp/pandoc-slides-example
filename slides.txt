@@ -1,0 +1,31 @@
+% Was bisher geschah...
+% Josef Kemetmüller
+% September 2016
+
+# In the morning
+
+## Getting up
+
+- Turn off alarm
+- Get out of bed
+
+## Breakfast
+
+- Eat eggs
+- Drink coffee
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+------------------
+
+![picture of spaghetti](https://upload.wikimedia.org/wikipedia/commons/3/33/Spaghettata.JPG)
+
+## Going to sleep
+
+- Get in bed
+- Count sheep
