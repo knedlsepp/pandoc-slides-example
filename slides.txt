@@ -7,6 +7,17 @@
 - Liste
 - Liste
 
+
+# Klassendiagramme
+
+## Geographische Abstraktionen
+
+##
+
+![](geospatial-abstractions.png){ width=100% }
+
+
+
 # API-Showcase
 
 ## 
