@@ -87,21 +87,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section><section id="status-april" class="titleslide slide level1"><h1>Status April</h1></section><section id="accuracy" class="slide level2">
 <h1>Accuracy</h1>
 <ul>
-<li>Good? (unknown?)</li>
+<li>Good. (unknown?)</li>
 </ul>
 </section><section id="speed" class="slide level2">
 <h1>Speed</h1>
 <ul>
 <li>Fine for production</li>
-<li>Reanalysis/Cross validation?</li>
+<li>How about reanalysis for cross validation?</li>
 </ul>
 </section><section id="reproducibility" class="slide level2">
 <h1>Reproducibility</h1>
 <ul>
-<li>Are we confident for reanalysis?</li>
 <li>Temporary observation files</li>
-<li>What must be computed so that the results are reproducible?</li>
-<li>Can we do 06.10.2016 and 06.10.2015</li>
+<li>Are we confident for reanalysis?</li>
+<li>What must be computed so that the results are reproducible? One/Two hours before?</li>
+<li>Can we compute 31.06.2016-06:00 after 01.01.2016-06:00 with confidence of using wrong input data?</li>
 </ul>
 </section><section id="ease-of-use-setup" class="slide level2">
 <h1>Ease of use / setup</h1>
@@ -113,11 +113,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>Domain: Fixed</li>
 <li>Resolution: Fixed</li>
-<li>Amount / format of input data: Stations good. Radars hardcoded</li>
+<li>Amount / format of input data:
+<ul>
+<li>Stations: flexible with preprocessing step</li>
+<li>Radars: hardcoded in analysis by name</li>
+</ul></li>
 <li>Output Data:
 <ul>
-<li>No self describing formats: Just 701*401 floats, rowwise-columnwise?</li>
-<li>BIL-Files non-portable big-endian/little-endian</li>
+<li>No self describing formats: Just 701*401 floats, rowwise/columnwise? big-/little-endian?</li>
 <li>No georeferencing</li>
 </ul></li>
 </ul>
@@ -125,22 +128,53 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h1>Easy to understand, maintain, improve</h1>
 <ul>
 <li>Different versions all intertwined with varying functionality</li>
-<li>SVN: 15m / 15m_cz / 15m_hyd / 15m_sk / 1h / 24h / 24h_cz / 24h_sk</li>
-<li>vvhmod-dev:~mgruppe: INCA / INCA4ROAD / INCA_1h / INCA_1h_rerun / INCA_24h / INCA_CZ / INCA_DEV / INCA_EX / INCA_HYD / INCA_L / INCA_L_ARO / INCA_L_HYD / INCA_L_rerun / INCA_MEDIA / INCA_RU / INCA_SK / INCA_SVN</li>
-</ul>
-</section></section>
-<section><section id="status-quo" class="titleslide slide level1"><h1>Status quo</h1></section><section id="accuracy-1" class="slide level2">
-<h1>Accuracy</h1>
+<li>SVN
 <ul>
-<li>Scientifically the</li>
+<li>15m / 15m_cz / 15m_hyd / 15m_sk</li>
+<li>1h</li>
+<li>24h / 24h_cz / 24h_sk</li>
+</ul></li>
+</ul>
+</section><section id="section" class="slide level2">
+<h1></h1>
+<p>vvhmod-dev:~mgruppe:</p>
+<ul>
+<li>INCA</li>
+<li>INCA4ROAD</li>
+<li>INCA_1h</li>
+<li>INCA_1h_rerun</li>
+<li>INCA_24h</li>
+<li>INCA_CZ</li>
+<li>INCA_DEV</li>
+<li>INCA_EX</li>
+<li>INCA_HYD</li>
+</ul>
+</section><section id="section-1" class="slide level2">
+<h1></h1>
+<ul>
+<li>INCA_L</li>
+<li>INCA_L_ARO</li>
+<li>INCA_L_HYD</li>
+<li>INCA_L_rerun</li>
+<li>INCA_MEDIA</li>
+<li>INCA_RU</li>
+<li>INCA_SK</li>
+<li>INCA_SVN</li>
 </ul>
 </section><section id="structural-changes-made" class="slide level2">
 <h1>Structural changes made</h1>
 <!-- Show gource -->
 <!-- Show differences in analysis -->
-</section></section>
-<section><section id="api-showcase" class="titleslide slide level1"><h1>API Showcase</h1></section><section id="central-class-spatialreferencesystem-and-spatialpoint" class="slide level2">
-<h1>Central class <code>SpatialReferenceSystem</code> and <code>SpatialPoint</code></h1>
+</section><section id="status-october" class="slide level2">
+<h1>Status October</h1>
+<h3 id="accuracy-1">Accuracy</h3>
+<ul>
+<li>No (scientific) changes</li>
+<li>Some differences in results due to</li>
+</ul>
+</section><section id="api-showcase" class="slide level2">
+<h1>API Showcase</h1>
+<h3 id="central-class-spatialreferencesystem-and-spatialpoint">Central class <code>SpatialReferenceSystem</code> and <code>SpatialPoint</code></h3>
 <div class="sourceCode"><pre class="sourceCode c++"><code class="sourceCode cpp"><span class="kw">auto</span> inca_ref = SpatialReferenceSystem{<span class="st">&quot;+init=epsg:31287 +no_defs&quot;</span>}
 <span class="kw">auto</span> longlat = SpatialReferenceSystem{<span class="st">&quot;+proj=longlat +el=WGS84 +datum=WGS84 +no_defs&quot;</span>};
 <span class="kw">auto</span> vienna = longlat(<span class="fl">16.372778</span>, <span class="fl">48.209206</span>, <span class="fl">180.</span>);

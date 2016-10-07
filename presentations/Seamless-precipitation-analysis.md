@@ -18,19 +18,19 @@
 # Status April
 ## Accuracy
 
-- Good? (unknown?)
+- Good. (unknown?)
 
 ## Speed
 
 - Fine for production
-- Reanalysis/Cross validation?
+- How about reanalysis for cross validation?
 
 ## Reproducibility
 
-- Are we confident for reanalysis?
 - Temporary observation files
-- What must be computed so that the results are reproducible?
-- Can we do 06.10.2016 and 06.10.2015
+- Are we confident for reanalysis?
+- What must be computed so that the results are reproducible? One/Two hours before?
+- Can we compute 31.06.2016-06:00 after 01.01.2016-06:00 with confidence of using wrong input data?
 
 ## Ease of use / setup
 - Good
@@ -38,36 +38,63 @@
 ## Flexibility
 - Domain: Fixed
 - Resolution: Fixed
-- Amount / format of input data: Stations good. Radars hardcoded
+- Amount / format of input data: 
+    - Stations: flexible with preprocessing step
+    - Radars: hardcoded in analysis by name
 - Output Data:
-    - No self describing formats: Just 701*401 floats, rowwise-columnwise?
-    - BIL-Files non-portable big-endian/little-endian
+    - No self describing formats: Just 701*401 floats, rowwise/columnwise? big-/little-endian?
     - No georeferencing
 
 ## Easy to understand, maintain, improve
 
 - Different versions all intertwined with varying functionality
-- SVN: 15m / 15m_cz / 15m_hyd / 15m_sk / 1h / 24h / 24h_cz / 24h_sk
-- vvhmod-dev:~mgruppe: INCA / INCA4ROAD / INCA_1h / INCA_1h_rerun / INCA_24h / INCA_CZ / INCA_DEV / INCA_EX / INCA_HYD / INCA_L / INCA_L_ARO / INCA_L_HYD / INCA_L_rerun / INCA_MEDIA / INCA_RU / INCA_SK / INCA_SVN
+- SVN
+    - 15m / 15m_cz / 15m_hyd / 15m_sk 
+    - 1h 
+    - 24h / 24h_cz / 24h_sk
 
+vvhmod-dev:~mgruppe:
 
-# Status quo
+- INCA 
+- INCA4ROAD 
+- INCA_1h 
+- INCA_1h_rerun 
+- INCA_24h 
+- INCA_CZ 
+- INCA_DEV 
+- INCA_EX 
+- INCA_HYD 
 
-## Accuracy
+## 
 
-- Scientifically the 
-
-
+- INCA_L 
+- INCA_L_ARO 
+- INCA_L_HYD 
+- INCA_L_rerun 
+- INCA_MEDIA 
+- INCA_RU 
+- INCA_SK 
+- INCA_SVN
 
 
 ## Structural changes made
 <!-- Show gource -->
 <!-- Show differences in analysis -->
 
+## Status October
 
-# API Showcase
+### Accuracy
 
-## Central class `SpatialReferenceSystem` and `SpatialPoint`
+- No (scientific) changes
+- Some differences in results due to 
+
+
+241 STATIONS MOVED IN DATABASE!!!
+
+
+## API Showcase
+
+### Central class `SpatialReferenceSystem` and `SpatialPoint`
 
 ```C++
 auto inca_ref = SpatialReferenceSystem{"+init=epsg:31287 +no_defs"}
